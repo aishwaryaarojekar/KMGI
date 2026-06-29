@@ -119,6 +119,7 @@
     ::-webkit-scrollbar { width:5px; }
     ::-webkit-scrollbar-track { background:#071a3a; }
     ::-webkit-scrollbar-thumb { background:#C9A227;border-radius:99px; }
+    .page-hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -127,7 +128,7 @@
 <div id="loader">
   <div class="text-center">
     <div class="flex items-center gap-3 justify-center mb-2">
-      <img src="logo1.jpeg"
+      <img src="C:\Users\Admin\Downloads\logo1.jpeg"
     alt="KMGI Consultancy Logo"
     class="w-12 h-12 rounded-lg object-contain"/>
       <span class="text-white font-bold tracking-wide">KMGI Consultancy</span>
@@ -144,7 +145,7 @@
 
       <!-- Brand -->
       <a href="#home" class="flex items-center gap-3 shrink-0">
-        <img src="logo1.jpeg"
+        <img src="C:\Users\Admin\Downloads\logo1.jpeg"
     alt="KMGI Consultancy Logo"
     class="w-12 h-12 rounded-lg object-contain"/>
         <div class="leading-tight">
@@ -156,14 +157,25 @@
       <!-- Desktop links -->
       <div class="hidden xl:flex items-center gap-0.5">
         <a href="#home"         data-section="home"         class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Home</a>
-        <a href="#about"        data-section="about"        class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">About</a>
-        <a href="#services"     data-section="services"     class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Services</a>
+        
+        <!-- About Dropdown -->
+        <div class="relative group py-5">
+          <button class="nav-link text-gray-300 text-[.8rem] font-medium px-3 flex items-center gap-1">
+            About
+            <svg id="about-arrow" class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute top-[calc(100%-10px)] left-0 w-48 bg-navyDark border border-white/10 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="#about"        data-section="about"        class="nav-link block px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 text-[.8rem]">About Us</a>
+            <a href="#services"     data-section="services"     class="nav-link block px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 text-[.8rem]">Services</a>
+            <a href="#industries"   data-section="industries"   class="nav-link block px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 text-[.8rem]">Industries</a>
+            <a href="#process"      data-section="process"      class="nav-link block px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 text-[.8rem]">Our Process</a>
+            <a href="#why-us"       data-section="why-us"       class="nav-link block px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 text-[.8rem]">Why Us</a>
+            <a href="#testimonials" data-section="testimonials" class="nav-link block px-4 py-2 text-gray-300 hover:text-gold hover:bg-white/5 text-[.8rem]">Testimonials</a>
+          </div>
+        </div>
+
         <a href="#tech-stack"   data-section="tech-stack"   class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Tech Stack</a>
-        <a href="#industries"   data-section="industries"   class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Industries</a>
-        <a href="#process"      data-section="process"      class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Process</a>
-        <a href="#why-us"       data-section="why-us"       class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Why Us</a>
         <a href="#jobs"         data-section="jobs"         class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Jobs</a>
-        <a href="#testimonials" data-section="testimonials" class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Testimonials</a>
         <a href="#contact"      data-section="contact"      class="nav-link text-gray-300 text-[.8rem] font-medium px-3 py-5">Contact</a>
       </div>
 
@@ -184,14 +196,25 @@
   <div id="mob-menu" class="xl:hidden bg-navyDark/97 border-t border-white/5">
     <div class="px-5 py-4 flex flex-col">
       <a href="#home"         class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Home</a>
-      <a href="#about"        class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">About</a>
-      <a href="#services"     class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Services</a>
+      
+      <!-- Mobile About Group -->
+      <div class="border-b border-white/5">
+        <button id="mob-about-btn" class="w-full flex items-center justify-between py-3 text-gray-300 hover:text-gold text-sm font-medium">
+          <span>About</span>
+          <svg id="mob-about-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="mob-about-sub" class="hidden pl-4 pb-2 flex flex-col gap-2.5">
+          <a href="#about"        class="mob-l text-gray-400 hover:text-gold text-xs py-1">About Us</a>
+          <a href="#services"     class="mob-l text-gray-400 hover:text-gold text-xs py-1">Services</a>
+          <a href="#industries"   class="mob-l text-gray-400 hover:text-gold text-xs py-1">Industries</a>
+          <a href="#process"      class="mob-l text-gray-400 hover:text-gold text-xs py-1">Our Process</a>
+          <a href="#why-us"       class="mob-l text-gray-400 hover:text-gold text-xs py-1">Why Us</a>
+          <a href="#testimonials" class="mob-l text-gray-400 hover:text-gold text-xs py-1">Testimonials</a>
+        </div>
+      </div>
+
       <a href="#tech-stack"   class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Tech Stack</a>
-      <a href="#industries"   class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Industries</a>
-      <a href="#process"      class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Process</a>
-      <a href="#why-us"       class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Why Us</a>
       <a href="#jobs"         class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Jobs</a>
-      <a href="#testimonials" class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium border-b border-white/5">Testimonials</a>
       <a href="#contact"      class="mob-l py-3 text-gray-300 hover:text-gold text-sm font-medium">Contact</a>
       <a href="#contact" class="mob-l mt-4 bg-gold text-navy font-bold text-sm py-3 rounded-xl text-center">Get Started</a>
     </div>
@@ -230,8 +253,7 @@
         </div>
 
         <p class="text-gray-400 text-base leading-relaxed mb-8 max-w-lg rev">
-          We are a growing IT solutions and training organization committed to delivering client-centric digital solutions and developing industry-ready talent.
-Our team works on live and major client-based projects, ensuring real business impact. Along with professional services, we provide hands-on internship opportunities where interns gain exposure to real corporate tools, workflows, and project environments.
+          KMGI Consultancy Pvt. Ltd. specializes in placing top-tier IT, BPO & ITES professionals — helping businesses scale their engineering teams and empowering developers to level up their careers.
         </p>
 
         <div class="flex flex-wrap gap-4 mb-10 rev">
@@ -1121,20 +1143,83 @@ window.addEventListener('load', () => {
   setTimeout(() => document.getElementById('loader').classList.add('out'), 1200);
 });
 
-// ── Navbar solid on scroll + active section ─────────
+// ── Router and Page Navigation ───────────────────────
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link[data-section]');
-const sections = [...navLinks].map(l => document.getElementById(l.dataset.section)).filter(Boolean);
+
+function handleRouting() {
+  const hash = window.location.hash || '#home';
+  const targetId = hash.substring(1);
+  const sections = document.querySelectorAll('section');
+  let targetSectionExists = false;
+
+  sections.forEach(s => {
+    if (s.id === targetId) {
+      s.classList.remove('page-hidden');
+      targetSectionExists = true;
+    } else {
+      s.classList.add('page-hidden');
+    }
+  });
+
+  if (!targetSectionExists) {
+    const homeSec = document.getElementById('home');
+    if (homeSec) homeSec.classList.remove('page-hidden');
+  }
+
+  // Update active links
+  navLinks.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === hash);
+  });
+
+  // Update mobile link text colors
+  document.querySelectorAll('.mob-l').forEach(l => {
+    l.classList.toggle('text-gold', l.getAttribute('href') === hash);
+  });
+
+  // Reset scroll
+  window.scrollTo({ top: 0 });
+
+  // Update navbar solid class based on page
+  const isHome = hash === '#home' || !hash;
+  if (isHome) {
+    navbar.classList.toggle('solid', window.scrollY > 40);
+  } else {
+    navbar.classList.add('solid');
+  }
+
+  // Manually trigger counter and skill bar observers for the visible section
+  setTimeout(() => {
+    const activeSec = document.getElementById(targetId) || document.getElementById('home');
+    if (activeSec) {
+      activeSec.querySelectorAll('.rev, .rev-l, .rev-r').forEach(el => el.classList.add('on'));
+      activeSec.querySelectorAll('.counter').forEach(c => {
+        if (c.textContent === '0') {
+          const target = +c.dataset.target;
+          let v = 0; const step = target / 90;
+          const tick = () => { v = Math.min(v + step, target); c.textContent = Math.floor(v).toLocaleString(); if (v < target) requestAnimationFrame(tick); };
+          requestAnimationFrame(tick);
+        }
+      });
+      activeSec.querySelectorAll('.skill-fill').forEach(b => {
+        b.style.width = b.style.getPropertyValue('--w') || '0%';
+      });
+    }
+  }, 100);
+}
+
+window.addEventListener('hashchange', handleRouting);
+window.addEventListener('load', handleRouting);
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
-  navbar.classList.toggle('solid', y > 40);
+  const hash = window.location.hash || '#home';
+  if (hash === '#home') {
+    navbar.classList.toggle('solid', y > 40);
+  } else {
+    navbar.classList.add('solid');
+  }
   document.getElementById('btt').classList.toggle('on', y > 400);
-
-  // Active link
-  let active = sections[0];
-  sections.forEach(s => { if (s && y >= s.offsetTop - 120) active = s; });
-  navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === active?.id));
 }, { passive: true });
 
 // ── Hamburger ────────────────────────────────────────
@@ -1144,6 +1229,18 @@ document.getElementById('ham').addEventListener('click', () => {
 document.querySelectorAll('.mob-l').forEach(l => {
   l.addEventListener('click', () => document.getElementById('mob-menu').classList.remove('open'));
 });
+
+// Mobile About Group toggle
+const mobAboutBtn = document.getElementById('mob-about-btn');
+const mobAboutSub = document.getElementById('mob-about-sub');
+const mobAboutArrow = document.getElementById('mob-about-arrow');
+if (mobAboutBtn && mobAboutSub) {
+  mobAboutBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobAboutSub.classList.toggle('hidden');
+    mobAboutArrow.classList.toggle('rotate-180');
+  });
+}
 
 // ── Scroll reveal ────────────────────────────────────
 const revObs = new IntersectionObserver(entries => {
@@ -1291,16 +1388,6 @@ function submitForm() {
   draw();
 })();
 
-// ── Hash-based URL update on section change ───────────
-const sections2 = document.querySelectorAll('section[id]');
-const hashObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting && e.intersectionRatio >= 0.3) {
-      history.replaceState(null, '', '#' + e.target.id);
-    }
-  });
-}, { threshold: 0.3 });
-sections2.forEach(s => hashObs.observe(s));
 </script>
 </body>
 </html>
